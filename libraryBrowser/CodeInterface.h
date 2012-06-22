@@ -77,7 +77,6 @@ private:
 
     DatabaseAccessor db_access;
     QueryData query_data;
-
     QList<QStringList> current_file_names;      // File names returned to the a query.
 };
 

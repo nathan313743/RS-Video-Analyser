@@ -16,16 +16,13 @@ void VideoTab::on_reset()
   cmb_encryption->setCurrentIndex(cmb_encryption->findText(""));
   cmb_video_bitrate->setCurrentIndex(cmb_video_bitrate->findText(""));
   cmb_color_matrix->setCurrentIndex(cmb_color_matrix->findText(""));
-  cmb_content_dimension->setCurrentIndex(cmb_content_dimension->findText(""));
   cmb_video_format->setCurrentIndex(cmb_video_format->findText(""));
   cmb_frame_rate_max->setCurrentIndex(cmb_frame_rate_max->findText(""));
   cmb_frame_rate_min->setCurrentIndex(cmb_frame_rate_min->findText(""));
-  cmb_content_motion->setCurrentIndex(cmb_content_motion->findText(""));
   cmb_aspect_ratio->setCurrentIndex(cmb_aspect_ratio->findText(""));
   cmb_sampling->setCurrentIndex(cmb_sampling->findText(""));
   cmb_frame_rate_scan->setCurrentIndex(cmb_frame_rate_scan->findText(""));
   cmb_res_size->setCurrentIndex(cmb_res_size->findText(""));
-  cmb_content_style->setCurrentIndex(cmb_content_style->findText(""));
   cmb_res_standard->setCurrentIndex(cmb_res_standard->findText(""));
 }
 
@@ -38,9 +35,6 @@ void VideoTab::createActions()
 {
   connect(cmb_aspect_ratio, SIGNAL(activated(const QString)), this, SLOT(on_aspect_change(QString)));
   connect(cmb_color_matrix, SIGNAL(activated(const QString)), this, SLOT(on_color_change(QString)));
-  connect(cmb_content_dimension, SIGNAL(activated(const QString)), this, SLOT(on_dimenstion_change(QString)));
-  connect(cmb_content_motion, SIGNAL(activated(const QString)), this, SLOT(on_motion_change(QString)));
-  connect(cmb_content_style, SIGNAL(activated(const QString)), this, SLOT(on_style_change(QString)));
   connect(cmb_encryption, SIGNAL(activated(const QString)), this, SLOT(on_encryption_change(QString)));
   connect(cmb_frame_rate_min, SIGNAL(activated(const QString)), this, SLOT(on_framerate_change_min(QString)));
   connect(cmb_frame_rate_max, SIGNAL(activated(const QString)), this, SLOT(on_framerate_change_max(QString)));
@@ -58,7 +52,6 @@ void VideoTab::createDisplay()
   grid->addWidget(codecGroup(), 0, 0);
   grid->addWidget(resolutionGroup(), 0, 1);
   grid->addWidget(frameRateGroup(), 1, 0);
-  grid->addWidget(contentGroup(), 1, 1);
   grid->addWidget(otherGroup(), 2, 0);
   setLayout(grid);
   setWindowTitle(tr("Group"));
@@ -115,54 +108,6 @@ void VideoTab::populateBoxes()
   }
   index = cmb_color_matrix->findText(current_selected);
   cmb_color_matrix->setCurrentIndex(index);
-
-
-  //content_dimension
-  values = code_int->get_combo_vals("Video", "content_dimension");
-  values.removeAll("");
-  current_selected = cmb_content_dimension->currentText();
-  cmb_content_dimension->clear();
-
-  cmb_content_dimension->addItem("");
-
-  for(int i = 0; i < values.size(); i++)
-  {
-    cmb_content_dimension->addItem(values[i]);
-  }
-  index = cmb_content_dimension->findText(current_selected);
-  cmb_content_dimension->setCurrentIndex(index);
-
-
-  //content_motion
-  values = code_int->get_combo_vals("Video", "content_motion");
-  values.removeAll("");
-  current_selected = cmb_content_motion->currentText();
-  cmb_content_motion->clear();
-
-  cmb_content_motion->addItem("");
-
-  for(int i = 0; i < values.size(); i++)
-  {
-    cmb_content_motion->addItem(values[i]);
-  }
-  index = cmb_content_motion->findText(current_selected);
-  cmb_content_motion->setCurrentIndex(index);
-
-
-  //content_style
-  values = code_int->get_combo_vals("Video", "content_style");
-  values.removeAll("");
-  current_selected = cmb_content_style->currentText();
-  cmb_content_style->clear();
-
-  cmb_content_style->addItem("");
-
-  for(int i = 0; i < values.size(); i++)
-  {
-    cmb_content_style->addItem(values[i]);
-  }
-  index = cmb_content_style->findText(current_selected);
-  cmb_content_style->setCurrentIndex(index);
 
 
   //encryption
@@ -361,23 +306,6 @@ QGroupBox *VideoTab::otherGroup()
   return groupBox;
 }
 
-QGroupBox *VideoTab::contentGroup()
-{
-  QGroupBox *groupBox = new QGroupBox(tr("Content"));
-  QFormLayout *layout = new QFormLayout;
-
-  cmb_content_motion = new QComboBox();
-  cmb_content_style = new QComboBox();
-  cmb_content_dimension = new QComboBox();
-
-  layout->addRow(new QLabel(tr("Motion:")), cmb_content_motion);
-  layout->addRow(new QLabel(tr("Style:")), cmb_content_style);
-  layout->addRow(new QLabel(tr("Dimension:")), cmb_content_dimension);
-  groupBox->setLayout(layout);
-
-  return groupBox;
-};
-
 void VideoTab::on_aspect_change(QString value)
 {
   emit comboChange("Video", "aspect_ratio", value);
@@ -386,21 +314,6 @@ void VideoTab::on_aspect_change(QString value)
 void VideoTab::on_color_change(QString value)
 {
   emit comboChange("Video", "color_matrix", value);
-}
-
-void VideoTab::on_dimenstion_change(QString value)
-{
-  emit comboChange("Video", "content_dimension", value);
-}
-
-void VideoTab::on_motion_change(QString value)
-{
-  emit comboChange("Video", "content_motion", value);
-}
-
-void VideoTab::on_style_change(QString value)
-{
-  emit comboChange("Video", "content_style", value);
 }
 
 void VideoTab::on_encryption_change(QString value)

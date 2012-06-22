@@ -30,7 +30,7 @@ public:
     MainWindow(QWidget *parent = 0);
 
 
-	public slots:
+public slots:
     void on_ok_clicked();
     void on_combo_update(QString, QString, QString);
     void on_recevied_index(const QModelIndex &);
@@ -54,7 +54,7 @@ signals:
     void reset_fields();
 
     /********************************************
-   ** Passes file path of selected video to a 
+   ** Passes file path of selected video to a
    ** parent window.
    * @param QString& - File path
    *********************************************/
@@ -69,7 +69,7 @@ private:
     AudioTab *audio_tab;
 
 
-    TreeModel *tree_model;			//holds tree data
+    TreeModel *tree_model;		//holds tree data
     QTreeView *view;            //holds the tree model
 
     QAction *newAct;
@@ -83,10 +83,6 @@ private:
     void create_actions();
     void create_buttons();
     void create_tabs();
-
-
-
-
 
 };
 #endif

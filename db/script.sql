@@ -1,0 +1,4 @@
+CREATE TABLE "File_Properties"
+(
+pk_fileID INTEGER  PRIMARY KEY AUTOINCREMENT 
+);

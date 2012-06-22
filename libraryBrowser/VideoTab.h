@@ -36,16 +36,13 @@ private:
 	QComboBox *cmb_encryption;
 	QComboBox *cmb_video_bitrate;
 	QComboBox *cmb_color_matrix;
-	QComboBox *cmb_content_dimension;
 	QComboBox *cmb_video_format;
 	QComboBox *cmb_frame_rate_max;
 	QComboBox *cmb_frame_rate_min;
-	QComboBox *cmb_content_motion;
 	QComboBox *cmb_aspect_ratio;
 	QComboBox *cmb_sampling;
 	QComboBox *cmb_frame_rate_scan;
 	QComboBox *cmb_res_size;
-	QComboBox *cmb_content_style;
 	QComboBox *cmb_res_standard;
 
 signals:
@@ -59,9 +56,6 @@ public slots:
 private slots:
 		void on_aspect_change(QString);
 		void on_color_change(QString);
-		void on_dimenstion_change(QString);
-		void on_motion_change(QString);
-		void on_style_change(QString);
 		void on_encryption_change(QString);
 		void on_scan_change(QString);
 		void on_framerate_change_min(QString);
