@@ -16,8 +16,8 @@ SOURCES += main.cpp \
     MainWindow.cpp \
     VideoTab.cpp \
     TreeModel.cpp
-OTHER_FILES += RS-Video-Analyers \
-    RS-Video-Analyers
+
+   
 HEADERS += AudioCode.h \
     AudioTab.h \
     CodeInterface.h \

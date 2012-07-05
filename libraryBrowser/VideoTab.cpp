@@ -48,7 +48,7 @@ void VideoTab::createActions()
 
 void VideoTab::createDisplay()
 {
-  QGridLayout *grid = new QGridLayout;
+  QGridLayout *grid = new QGridLayout(this);
   grid->addWidget(codecGroup(), 0, 0);
   grid->addWidget(resolutionGroup(), 0, 1);
   grid->addWidget(frameRateGroup(), 1, 0);
@@ -60,11 +60,16 @@ void VideoTab::createDisplay()
 
 QGroupBox *VideoTab::codecGroup()
 {
-  QGroupBox *groupBox = new QGroupBox(tr("Video Codec"));
+  QGroupBox *groupBox = new QGroupBox(tr("Video Codec"),this);
   QFormLayout *layout = new QFormLayout;
 
   cmb_video_format = new QComboBox;
   cmb_video_bitrate = new QComboBox;
+
+  cmb_video_format->adjustSize();
+  cmb_video_bitrate->adjustSize();
+  cmb_video_format->setMinimumWidth(100);
+  cmb_video_bitrate->setMinimumWidth(100);
 
   layout->addRow(new QLabel(tr("Format:")), cmb_video_format);
   layout->addRow(new QLabel(tr("Bit Rate:")), cmb_video_bitrate);
@@ -72,6 +77,8 @@ QGroupBox *VideoTab::codecGroup()
 
   return groupBox;
 }
+
+
 
 void VideoTab::populateBoxes()
 {

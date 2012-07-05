@@ -2,10 +2,7 @@
 # Project created by QtCreator 2012-05-24T13:55:34
 # -------------------------------------------------
 QT += sql
-QT -= gui
 TARGET = streamAnalyser
-CONFIG += console
-CONFIG -= app_bundle
 TEMPLATE = app
 SOURCES += main.cpp \
     TransData.cpp \

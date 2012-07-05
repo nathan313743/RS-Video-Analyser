@@ -7,7 +7,7 @@ StartWindow::StartWindow()
   //stream_analyser->setModal(true);
 
 
-  QVBoxLayout *mainLayout = new QVBoxLayout;
+  QVBoxLayout *mainLayout = new QVBoxLayout(this);
   mainLayout->addWidget(createHorizontalGroupBox());
 
   setLayout(mainLayout);
@@ -20,9 +20,9 @@ StartWindow::StartWindow()
 
 QGroupBox* StartWindow::createHorizontalGroupBox()
 {
-  QGroupBox *horizontalGroupBox = new QGroupBox();
-  QHBoxLayout *layout = new QHBoxLayout;
-  button = new QPushButton(tr("Start"));
+  QGroupBox *horizontalGroupBox = new QGroupBox(this);
+  QHBoxLayout *layout = new QHBoxLayout(this);
+  button = new QPushButton(tr("Start"), this);
 
   layout->addWidget(button);
   horizontalGroupBox->setLayout(layout);

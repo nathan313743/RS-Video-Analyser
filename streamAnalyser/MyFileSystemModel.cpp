@@ -113,7 +113,7 @@ void MyFileSystemModel::check_children_auto(const QModelIndex &index)
   if(check_list.contains(index.parent()))
   {
     check_list.insert(index);
-    removed_list.remove(index);
+    //removed_list.remove(index);
   }
 
   if(rowCount > 0)
@@ -124,7 +124,7 @@ void MyFileSystemModel::check_children_auto(const QModelIndex &index)
     }
     check_list.insert(index);
     partial_list.remove(index);
-    removed_list.remove(index);
+    //removed_list.remove(index);
   }
 
   emit layoutChanged();
@@ -143,7 +143,7 @@ void MyFileSystemModel::uncheck_children(const QModelIndex &index)
   }
 
   check_list.remove(index);
-  removed_list.insert(index);
+  //removed_list.insert(index);
 
   check_partial(index);
 
@@ -166,7 +166,7 @@ void MyFileSystemModel::uncheck_children_auto(const QModelIndex &index)
   }
 
   check_list.remove(index);
-  removed_list.insert(index);
+  //removed_list.insert(index);
 
   emit layoutChanged();
 }
