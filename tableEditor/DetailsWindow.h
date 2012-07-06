@@ -17,7 +17,6 @@
 #include "AudioTab.h"
 #include "DatabaseAccessor.h"
 #include "CodeInterface.h"
-#include "InterfaceTab.h"
 
 class DetailsWindow : public QDialog
 {
@@ -43,7 +42,6 @@ private:
 	FileTab *fTab;
 	VideoTab *vTab;
 	AudioTab *aTab;
-	InterfaceTab *i_tab;
 
 	QDialogButtonBox *btnBox;
 	QPushButton *btnOK;

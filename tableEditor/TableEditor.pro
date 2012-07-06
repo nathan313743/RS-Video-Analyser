@@ -13,7 +13,6 @@ TEMPLATE = app
 SOURCES += main.cpp \
     VideoTab.cpp \
     TableViewer.cpp \
-    InterfaceTab.cpp \
     FileTab.cpp \
     DetailsWindow.cpp \
     DatabaseAccessor.cpp \
@@ -22,7 +21,6 @@ SOURCES += main.cpp \
 
 HEADERS += VideoTab.h \
     TableViewer.h \
-    InterfaceTab.h \
     FileTab.h \
     DetailsWindow.h \
     DatabaseAccessor.h \

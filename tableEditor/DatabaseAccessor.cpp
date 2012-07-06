@@ -6,7 +6,7 @@
 DatabaseAccessor::DatabaseAccessor()
 {
 	db = QSqlDatabase::addDatabase("QSQLITE", "myConnection");
-	db.setDatabaseName("../../database/video_library.sqlite");
+    db.setDatabaseName("../db/video_library.sqlite");
 }
 
 DatabaseAccessor::~DatabaseAccessor()

@@ -26,11 +26,11 @@ private:
 
 	CodeInterface *code_int;
 
-	QGroupBox *codecGroup();
+	QGroupBox *groupCodec();
 	QGroupBox *contentGroup();
-	QGroupBox *frameRateGroup();
-	QGroupBox *otherGroup();
-	QGroupBox *resolutionGroup();
+	QGroupBox *groupFrameRate();
+	QGroupBox *groupOther();
+	QGroupBox *groupResolustion();
 
 
 	QComboBox *cmb_encryption;

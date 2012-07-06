@@ -1,15 +1,15 @@
 /****************************************************************************
-** Meta object code from reading C++ file 'StartWindow.h'
+** Meta object code from reading C++ file 'VideoTab.h'
 **
-** Created: Sun Jun 10 20:59:32 2012
+** Created: Fri Jul 6 20:10:44 2012
 **      by: The Qt Meta Object Compiler version 63 (Qt 4.8.1)
 **
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
 
-#include "StartWindow.h"
+#include "../tableEditor/VideoTab.h"
 #if !defined(Q_MOC_OUTPUT_REVISION)
-#error "The header file 'StartWindow.h' doesn't include <QObject>."
+#error "The header file 'VideoTab.h' doesn't include <QObject>."
 #elif Q_MOC_OUTPUT_REVISION != 63
 #error "This file was generated using the moc from 4.8.1. It"
 #error "cannot be used with the include files from this version of Qt."
@@ -17,13 +17,13 @@
 #endif
 
 QT_BEGIN_MOC_NAMESPACE
-static const uint qt_meta_data_StartWindow[] = {
+static const uint qt_meta_data_VideoTab[] = {
 
  // content:
        6,       // revision
        0,       // classname
        0,    0, // classinfo
-       2,   14, // methods
+       1,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -31,65 +31,62 @@ static const uint qt_meta_data_StartWindow[] = {
        0,       // signalCount
 
  // slots: signature, parameters, type, tag, flags
-      13,   12,   12,   12, 0x0a,
-      28,   12,   12,   12, 0x0a,
+      10,    9,    9,    9, 0x08,
 
        0        // eod
 };
 
-static const char qt_meta_stringdata_StartWindow[] = {
-    "StartWindow\0\0buttonPushed()\0"
-    "on_pass_file(QString&)\0"
+static const char qt_meta_stringdata_VideoTab[] = {
+    "VideoTab\0\0onComboSelect(int)\0"
 };
 
-void StartWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
+void VideoTab::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
 {
     if (_c == QMetaObject::InvokeMetaMethod) {
         Q_ASSERT(staticMetaObject.cast(_o));
-        StartWindow *_t = static_cast<StartWindow *>(_o);
+        VideoTab *_t = static_cast<VideoTab *>(_o);
         switch (_id) {
-        case 0: _t->buttonPushed(); break;
-        case 1: _t->on_pass_file((*reinterpret_cast< QString(*)>(_a[1]))); break;
+        case 0: _t->onComboSelect((*reinterpret_cast< int(*)>(_a[1]))); break;
         default: ;
         }
     }
 }
 
-const QMetaObjectExtraData StartWindow::staticMetaObjectExtraData = {
+const QMetaObjectExtraData VideoTab::staticMetaObjectExtraData = {
     0,  qt_static_metacall 
 };
 
-const QMetaObject StartWindow::staticMetaObject = {
-    { &QWidget::staticMetaObject, qt_meta_stringdata_StartWindow,
-      qt_meta_data_StartWindow, &staticMetaObjectExtraData }
+const QMetaObject VideoTab::staticMetaObject = {
+    { &QWidget::staticMetaObject, qt_meta_stringdata_VideoTab,
+      qt_meta_data_VideoTab, &staticMetaObjectExtraData }
 };
 
 #ifdef Q_NO_DATA_RELOCATION
-const QMetaObject &StartWindow::getStaticMetaObject() { return staticMetaObject; }
+const QMetaObject &VideoTab::getStaticMetaObject() { return staticMetaObject; }
 #endif //Q_NO_DATA_RELOCATION
 
-const QMetaObject *StartWindow::metaObject() const
+const QMetaObject *VideoTab::metaObject() const
 {
     return QObject::d_ptr->metaObject ? QObject::d_ptr->metaObject : &staticMetaObject;
 }
 
-void *StartWindow::qt_metacast(const char *_clname)
+void *VideoTab::qt_metacast(const char *_clname)
 {
     if (!_clname) return 0;
-    if (!strcmp(_clname, qt_meta_stringdata_StartWindow))
-        return static_cast<void*>(const_cast< StartWindow*>(this));
+    if (!strcmp(_clname, qt_meta_stringdata_VideoTab))
+        return static_cast<void*>(const_cast< VideoTab*>(this));
     return QWidget::qt_metacast(_clname);
 }
 
-int StartWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
+int VideoTab::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 {
     _id = QWidget::qt_metacall(_c, _id, _a);
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 2)
+        if (_id < 1)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 2;
+        _id -= 1;
     }
     return _id;
 }

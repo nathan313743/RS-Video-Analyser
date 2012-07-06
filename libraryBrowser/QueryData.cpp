@@ -8,10 +8,6 @@ QueryData::QueryData()
 	setup_File_Properties_fields();
 	setup_Video_fields();
 	setup_Audio_fields();
-	setup_Signal_Root_fields();
-	setup_Transport_Stream_fields();
-	setup_TS_Data_fields();
-	setup_Test_Case_fields();
 }
 
 QueryData::~QueryData()
@@ -33,17 +29,6 @@ void QueryData::setup_tables()
 	values << "Audio" << "Audio";
 	tables.push_back(values);
 
-	values.clear();
-	values << "Signal Root" << "Signal Root";
-	tables.push_back(values);
-
-	values.clear();
-	values << "Transport Stream" << "Transport Stream";
-	tables.push_back(values);
-
-	values.clear();
-	values << "Test Case" << "Test Case";
-	tables.push_back(values);
 }
 
 void QueryData::setup_File_Properties_fields()
@@ -158,70 +143,6 @@ void QueryData::setup_Audio_fields()
 	audio_fields.push_back(values);
 }
 
-void QueryData::setup_Signal_Root_fields()
-{
-	QStringList values;
-
-	values << "region" << "Region";
-	signal_fields.push_back(values);
-
-	values.clear();
-	values << ", producer" << "Producer";
-	signal_fields.push_back(values);
-
-	values.clear();
-	values << ", source" << "Source";
-	signal_fields.push_back(values);
-}
-
-void QueryData::setup_Transport_Stream_fields()
-{
-	QStringList values;
-
-	values << "audio_only" << "Audio Only";
-	trans_fields.push_back(values);
-
-	values.clear();
-	values << ", num_aud_services" << "Audio Services";
-	trans_fields.push_back(values);
-
-	values.clear();
-	values << ", num_vid_services" << "Video Services";
-	trans_fields.push_back(values);
-
-	values.clear();
-	values << ", loop_length_ms" << "Loop Length (ms)";
-	trans_fields.push_back(values);
-
-	values.clear();
-	values << ", standard" << "Standard";
-	trans_fields.push_back(values);
-
-	values.clear();
-	values << ", ts_bitrate_Kb" << "TS Bitrate (Kb)";
-	trans_fields.push_back(values);
-
-	values.clear();
-	values << ", ts_packet_size" << "TS Packet Size";
-	trans_fields.push_back(values);
-}
-
-void QueryData::setup_TS_Data_fields()
-{
-	QStringList values;
-
-	values << "data_type" << "Data Type";
-	ts_data_fields.push_back(values);
-
-}
-
-void QueryData::setup_Test_Case_fields()
-{
-	QStringList values;
-
-	values << "test_case" << "Test Case";
-	test_case_fields.push_back(values);
-}
 
 QList<QStringList> QueryData::get_tables()
 {
@@ -241,24 +162,4 @@ QList<QStringList> QueryData::get_Video_fields()
 QList<QStringList> QueryData::get_Audio_fields()
 {
 	return audio_fields;
-}
-
-QList<QStringList> QueryData::get_Signal_Root_fields()
-{
-	return signal_fields;
-}
-
-QList<QStringList> QueryData::get_Transport_Stream_fields()
-{
-	return trans_fields;
-}
-
-QList<QStringList> QueryData::get_TS_Data_fields()
-{
-	return ts_data_fields;
-}
-
-QList<QStringList> QueryData::get_Test_Case_fields()
-{
-	return test_case_fields;
 }

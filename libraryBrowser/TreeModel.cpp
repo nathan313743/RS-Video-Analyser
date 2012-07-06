@@ -232,7 +232,7 @@ void TreeModel::create_Audio_node(TreeItem *&ptrRootItem)
 
         QList<QStringList> singleStream = streamList.at(i);
 
-        for(int j = 0; j < singleStream.size(); j++)												//Loop through all columns
+        for(int j = 0; j < singleStream.size(); j++)        //Loop through all columns
         {
             QList<QVariant> columnData;
             columnData.clear();
@@ -242,104 +242,11 @@ void TreeModel::create_Audio_node(TreeItem *&ptrRootItem)
     }
 }
 
-void TreeModel::create_Signal_Root_node(TreeItem *&ptrRootItem)
-{
-    int fileID = ptrRootItem->get_file_ID();
-    QList<QVariant> tableData;
-    tableData << "Signal Root" << "";
-
-    TreeItem *tableRoot = new TreeItem(tableData, ptrRootItem, fileID);
-
-    ptrRootItem->appendChild(tableRoot);
-    ptrRootItem->setTablesFetched(true);
-    tableRoot->setTablesFetched(true);
-
-    QList<QStringList> tabelValues = code_int->get_Signal_Root_vals(fileID);
-
-    for(int j = 0; j < tabelValues.size(); j++)												//Loop through all columns
-    {
-        QList<QVariant> columnData;
-        columnData.clear();
-        columnData << tabelValues.at(j).at(0) << tabelValues.at(j).at(1);
-        tableRoot->appendChild(new TreeItem(columnData, tableRoot, fileID, false));
-    }
-}
-
-void TreeModel::create_Test_Case_node(TreeItem *&ptrRootItem)
-{
-    int fileID = ptrRootItem->get_file_ID();
-    QList<QVariant> tableData;
-    tableData << "Test Case" << "";
-
-    TreeItem *tableRoot = new TreeItem(tableData, ptrRootItem, fileID);
-
-    ptrRootItem->appendChild(tableRoot);
-    ptrRootItem->setTablesFetched(true);
-    tableRoot->setTablesFetched(true);
-
-    QList<QStringList> tabelValues = code_int->get_Test_Case_vals(fileID);
-
-    for(int j = 0; j < tabelValues.size(); j++)												//Loop through all columns
-    {
-        QList<QVariant> columnData;
-        columnData.clear();
-        columnData << tabelValues.at(j).at(0) << tabelValues.at(j).at(1);
-        tableRoot->appendChild(new TreeItem(columnData, tableRoot, fileID, false));
-    }
-}
-
-void TreeModel::create_Transport_Stream_node(TreeItem *&ptrRootItem)
-{
-    int fileID = ptrRootItem->get_file_ID();
-    QList<QVariant> tableData;
-    tableData << "Transport Stream" << "";
-
-    TreeItem *tableRoot = new TreeItem(tableData, ptrRootItem, fileID);
-
-    ptrRootItem->appendChild(tableRoot);
-    ptrRootItem->setTablesFetched(true);
-    tableRoot->setTablesFetched(true);
-
-    QList<QStringList> tabelValues = code_int->get_Transport_Stream_vals(fileID);
-
-    for(int j = 0; j < tabelValues.size(); j++)												//Loop through all columns
-    {
-        QList<QVariant> columnData;
-        columnData.clear();
-        columnData << tabelValues.at(j).at(0) << tabelValues.at(j).at(1);
-        tableRoot->appendChild(new TreeItem(columnData, tableRoot, fileID, false));
-    }
-
-    //make TS_Data branch
-    QList<QStringList> ts_dataVals = code_int->get_TS_Data_vals(fileID);
-
-    if(ts_dataVals.size() > 0)
-    {
-        QList<QVariant> columnData;
-        columnData << "Data" << "";
-        TreeItem *dataRoot= new TreeItem(columnData, tableRoot, fileID);
-        dataRoot->setTablesFetched(true);
-
-        for(int j = 0; j < ts_dataVals.size(); j++)
-        {
-            QList<QVariant> columnData;
-            columnData.clear();
-            columnData << ts_dataVals.at(j).at(0) + " " + QString::number(j+1) << ts_dataVals.at(j).at(1);
-            dataRoot->appendChild(new TreeItem(columnData, dataRoot, fileID, false));
-        }
-
-        tableRoot->appendChild(dataRoot);
-    }
-}
-
 void TreeModel::getTableValues(TreeItem *ptrRootItem)
 {
     create_File_Properties_node(ptrRootItem);
     create_Audio_node(ptrRootItem);
     create_Video_node(ptrRootItem);
-    create_Signal_Root_node(ptrRootItem);
-    create_Test_Case_node(ptrRootItem);
-    create_Transport_Stream_node(ptrRootItem);
 }
 
 bool TreeModel::canFetchMore(const QModelIndex &parent )const

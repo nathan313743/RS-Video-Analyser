@@ -31,8 +31,6 @@ void MainWindow::create_tabs()
     //Create Tabs
     video_tab = new VideoTab(this, code_int);
     audio_tab = new AudioTab(this, code_int);
-    ;
-
 }
 
 void MainWindow::create_layout()
@@ -60,13 +58,13 @@ void MainWindow::create_layout()
 
 
     //Top half of window
-    QHBoxLayout *topLayout = new QHBoxLayout;
+    QHBoxLayout *topLayout = new QHBoxLayout(this);
     topLayout->addWidget(view);
     topLayout->addWidget(tabWidget);
 
 
     //Bottom half of window
-    QHBoxLayout *bottomLayout = new QHBoxLayout;
+    QHBoxLayout *bottomLayout = new QHBoxLayout(this);
     bottomLayout->addWidget(lblFile);
     bottomLayout->addWidget(lineEdit, 2, Qt::AlignLeft);
     bottomLayout->addWidget(buttonOK, 2, Qt::AlignRight);
@@ -75,14 +73,14 @@ void MainWindow::create_layout()
 
 
     //Put layouts in GroupBoxes
-    QGroupBox *horizontalGroupBox1 = new QGroupBox();
+    QGroupBox *horizontalGroupBox1 = new QGroupBox(this);
     horizontalGroupBox1->setLayout(topLayout);
-    QGroupBox *horizontalGroupBox2 = new QGroupBox();
+    QGroupBox *horizontalGroupBox2 = new QGroupBox(this);
     horizontalGroupBox2->setLayout(bottomLayout);
 
 
     //Add group boxes to overal layout
-    QVBoxLayout *mainLayout = new QVBoxLayout();
+    QVBoxLayout *mainLayout = new QVBoxLayout(this);
     mainLayout->addWidget(horizontalGroupBox1);
     mainLayout->addWidget(horizontalGroupBox2);
 

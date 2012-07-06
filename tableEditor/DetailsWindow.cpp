@@ -13,7 +13,6 @@ DetailsWindow::DetailsWindow(const bool editFlag, CodeInterface &codInt, QWidget
 	edit_flag = editFlag;
 	QVBoxLayout *topLayout = new QVBoxLayout;
 
-  i_tab = new InterfaceTab(this, codInt, editFlag);
 	fTab = new FileTab(this, codInt, editFlag);
 	vTab = new VideoTab(this, codInt, editFlag);
 	aTab = new AudioTab(this, codInt, editFlag);
@@ -24,7 +23,6 @@ DetailsWindow::DetailsWindow(const bool editFlag, CodeInterface &codInt, QWidget
 	tabWidget->addTab(fTab, "File Details");
 	tabWidget->addTab(vTab, "Video");
 	tabWidget->addTab(aTab, "Audio");
-	tabWidget->addTab(i_tab, "Interface");
 
 	if(editFlag == true)
 	{

@@ -28,8 +28,8 @@ private:
 
 	CodeInterface *code_int;
 
-	QGroupBox *codec_group();
-	QGroupBox *other_group();
+	QGroupBox *groupCodec();
+	QGroupBox *groupOther();
 
 	QComboBox *cmb_audio_format;
 	QComboBox *cmb_audio_bitrate;
