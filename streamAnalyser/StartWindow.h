@@ -2,12 +2,12 @@
 #define STARTWINDOW_H_
 
 #include <QWidget>
-#include <qstring.h>
-#include <qlabel.h>
-#include <qgroupbox.h>
-#include <qpushbutton.h>
-#include <qaction.h>
-#include <qlayout.h>
+#include <QString>
+#include <QLabel>
+#include <QGroupBox>
+#include <QPushButton>
+#include <QAction>
+#include <QLayout>
 
 #include "StreamAnalyser.h"
 

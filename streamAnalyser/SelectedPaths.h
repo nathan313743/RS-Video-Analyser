@@ -1,7 +1,7 @@
 #ifndef SELECTEDPATHS_H
 #define SELECTEDPATHS_H
 
-#include <qstringlist.h>
+#include <QStringList>
 
 class SelectedPaths
 {

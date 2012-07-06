@@ -5,12 +5,6 @@ QT += sql
 TARGET = streamAnalyser
 TEMPLATE = app
 SOURCES += main.cpp \
-    TransData.cpp \
-    TransportDetails.cpp \
-    AudioData.cpp \
-    VideoData.cpp \
-    FileDetails.cpp \
-    main.cpp \
     SelectedPaths.cpp \
     FileProcessor.cpp \
     PathsHolder.cpp \
@@ -37,8 +31,6 @@ HEADERS += MediaInfoDLL.h \
     DirectorySearch.h \
     StreamAnalyser.h \
     VideoData.h \
-    TransportDetails.h \
-    TransData.h \
     ThreadWorker.h \
     MyFolderDialog.h \
     MyFileSystemModel.h

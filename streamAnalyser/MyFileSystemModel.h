@@ -1,10 +1,10 @@
 #ifndef MYFILESYSTEMMODEL_H
 #define MYFILESYSTEMMODEL_H
 
-#include <qfilesystemmodel.h>
-#include <qset.h>
-#include <qvariant.h>
-#include <qstringlist.h>
+#include <QFileSystemModel>
+#include <QSet>
+#include <QVariant>
+#include <QStringList>
 
 #include "CodeInterface.h"
 

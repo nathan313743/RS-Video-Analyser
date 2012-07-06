@@ -68,13 +68,13 @@ signals:
 private:
 	DatabaseAccessor db_access;
 	QThread *thread;			
-	ThreadWorker *tw;								// Worker thread object.
+    ThreadWorker *tw;       // Worker thread object.
 	bool *ptr_StopFlag;	
 	bool threadRunning;		
 
-  QStringList skipped_list;				// List of files not added beacause they already exist.
-  QStringList unprocessed_list;		// List of files that could not be opened.
-  QStringList added_list;					// List of files added to the database.
+  QStringList skipped_list;     // List of files not added beacause they already exist.
+  QStringList unprocessed_list;     // List of files that could not be opened.
+  QStringList added_list;       // List of files added to the database.
 };
 
 #endif

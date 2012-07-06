@@ -10,38 +10,69 @@
 
 #include "FileDetails.h"
 #include "AudioData.h"
-#include "TransportDetails.h"
-#include "TransData.h"
 #include "VideoData.h"
-
-class TransportDetails;
 
 class FileDetails 
 {
 public:
-	QList<AudioData>& get_audio_list();
-	QString get_extension();
-	QString get_file_name();
-	QString get_file_path();
-	float get_sizeMB();
-	TransportDetails& get_trans_details();
-	QList<VideoData>& get_video_list();
+    void set(const QString &ext, const QString &name, const QString &path,
+             float size)
+    {
+        _extension = ext;
+        _file_name = name;
+        _file_path = path;
+        _sizeMB = size;
+    }
 
-	void set(const QString &, const QString &, const QString &, float);
-	void set_audio_list(const QList<AudioData> &);
-	void set_trans_list(const TransportDetails &);
-	void set_video_list(const QList<VideoData> &);
+    QList<AudioData>& get_audio_list()
+    {
+        return _aud_list;
+    }
+
+    QString get_extension()
+    {
+        return _extension;
+    }
+
+    QString get_file_name()
+    {
+        return _file_name;
+    }
+
+    QString get_file_path()
+    {
+        return _file_path;
+    }
+
+    float get_sizeMB()
+    {
+        return _sizeMB;
+    }
+
+
+    QList<VideoData>& get_video_list()
+    {
+        return _vid_list;
+    }
+
+    void set_audio_list(const QList<AudioData> &list)
+    {
+        _aud_list = list;
+    }
+
+    void set_video_list(const QList<VideoData> &list)
+    {
+
+        _vid_list = list;
+    }
 
 private:
-	QList<AudioData> _aud_list;
-	QString _extension;
-	QString _file_name;
-	QString _file_path;
-	float _sizeMB;
-	TransportDetails _trans_details;
-	QList<VideoData> _vid_list;
-
-
+    QList<AudioData> _aud_list;
+    QString _extension;
+    QString _file_name;
+    QString _file_path;
+    float _sizeMB;
+    QList<VideoData> _vid_list;
 };
 
 #endif /* FILEDETAILS_H_ */

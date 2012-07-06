@@ -1,15 +1,15 @@
 #ifndef LOGOUTPUT_H
 #define LOGOUTPUT_H
 
-#include <qdialog.h>
-#include <qstringlist.h>
-#include <qlayout.h>
-#include <qtextedit.h>
-#include <qdialogbuttonbox.h>
+#include <QDialog>
+#include <QStringList>
+#include <QLayout>
+#include <QTextEdit>
+#include <QDialogButtonBox>
 #include <QPushButton>
-#include <qfile.h>
-#include <qtextstream.h>
-#include <qdatetime.h>
+#include <QFile>
+#include <QTextStream>
+#include <QDateTime>
 
 class LogOutput : public QDialog
 {

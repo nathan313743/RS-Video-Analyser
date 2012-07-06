@@ -1,7 +1,7 @@
 #ifndef PATHSHOLDER
 #define PATHSHOLDER
 
-#include <qstringlist.h>
+#include <QStringList>
 
 class PathsHolder
 {

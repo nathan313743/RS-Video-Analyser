@@ -1,11 +1,11 @@
 #ifndef SELECTFOLDERSDIALOG_H
 #define SELECTFOLDERSDIALOG_H
 
-#include <qdialog.h>
-#include <qdialogbuttonbox.h>
-#include <qpushbutton.h>
-#include <qtreeview.h>
-#include <qlayout.h>
+#include <QDialog>
+#include <QDialogButtonBox>
+#include <QPushButton>
+#include <QTreeView>
+#include <QLayout>
 
 #include <QDebug>
 

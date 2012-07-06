@@ -2,7 +2,6 @@
 
 StartWindow::StartWindow()
 {
-  createHorizontalGroupBox();
 
   //stream_analyser->setModal(true);
 

@@ -20,95 +20,95 @@ using namespace std;
 
 class StreamAnalyser : public QMainWindow
 {
-	Q_OBJECT
+    Q_OBJECT
 
 public:
-  StreamAnalyser(QWidget *parent = 0, Qt::WindowFlags = 0);
-	~StreamAnalyser();
+    StreamAnalyser(QWidget *parent = 0, Qt::WindowFlags = 0);
+    ~StreamAnalyser();
 
 public slots:
 
-	/******************************************
-	 ** Called when processing is finished.
-	 ** 'Rest Database' button becomes active.
-	 *******************************************/
-	void onFinish();
+    /******************************************
+     ** Called when processing is finished.
+     ** 'Rest Database' button becomes active.
+     *******************************************/
+    void onFinish();
 
-	/*******************************************************************
-	 ** Receives status messages and updates the QLabel on the screen.
-	 * @param QString  - The message to display.
-	 *******************************************************************/
-	void onStatusUpdate(QString);
+    /*******************************************************************
+     ** Receives status messages and updates the QLabel on the screen.
+     * @param QString  - The message to display.
+     *******************************************************************/
+    void onStatusUpdate(QString);
 
-	/********************************************************
-	 ** Receives messages and turns the progress bar on or
-	 ** off accordingly.
-	 * @param int - 0 = on, 1 = off.
-	 ********************************************************/
-	void onProgBar(int);
+    /********************************************************
+     ** Receives messages and turns the progress bar on or
+     ** off accordingly.
+     * @param int - 0 = on, 1 = off.
+     ********************************************************/
+    void onProgBar(int);
 
 private slots:
-	/*************************************************
-	 ** Activated when QFileDialog close.  Starts the 
-	 ** analysing process if a directory was selected.
-	 **************************************************/
-	void openFile();
-	void onReset_db();
+    /*************************************************
+     ** Activated when QFileDialog close.  Starts the
+     ** analysing process if a directory was selected.
+     **************************************************/
+    void openFile();
+    void onReset_db();
 
-	/**
-	 * Stops the thread if the cancel button was clicked during 
-	 * the analysing process.
-	 */
-	void onCancelClick();
+    /**
+     * Stops the thread if the cancel button was clicked during
+     * the analysing process.
+     */
+    void onCancelClick();
 
 private:
-	QPushButton *cButton;						//Cancel button
-	QMenu *fileMenu;
-	QMenu *editMenu;
-  CodeInterface *code_int;			//seperate GUI from code
-	QLabel *infoLabel;
-	QAction *openAct;
-	QAction *resetAct;
-	QProgressBar *qProBar;	
+    QPushButton *cButton;						//Cancel button
+    QMenu *fileMenu;
+    QMenu *editMenu;
+    CodeInterface *code_int;			//seperate GUI from code
+    QLabel *infoLabel;
+    QAction *openAct;
+    QAction *resetAct;
+    QProgressBar *qProBar;
 
-  bool check_database();
+    bool check_database();
 
-	/***********************************
-	 ** Creates actions for the file menu.
-	 ************************************/
-	void createActions();
+    /***********************************
+     ** Creates actions for the file menu.
+     ************************************/
+    void createActions();
 
-	/**************************
-	 * Create the top file menu
-	 **************************/
-	void createMenus();
+    /**************************
+     * Create the top file menu
+     **************************/
+    void createMenus();
 
-  void create_log();
+    void create_log();
 
-	void reset_db();
+    void reset_db();
 
-	/**
-	 * Creates GUI layout.
-	 */
-	void setupGUI();
+    /**
+     * Creates GUI layout.
+     */
+    void setupGUI();
 
-	/****************************************//**
-	 * Creates the interface object and sets up 
-	 * the signal and slots.
-	 ********************************************/
-	void setupInterface();
+    /****************************************//**
+     * Creates the interface object and sets up
+     * the signal and slots.
+     ********************************************/
+    void setupInterface();
 
-	/*********************************//**
-	 * Starts the analysing process.
-	 *
-	 * @param QString& - Directory path.
-	 *************************************/
-  void startProcess(QStringList&);
+    /*********************************//**
+     * Starts the analysing process.
+     *
+     * @param QString& - Directory path.
+     *************************************/
+    void startProcess(QStringList&);
 
-	/*******************************//**
-	 * Stops the work thread process.
-	 **********************************/
-	void stopThread();
+    /*******************************//**
+     * Stops the work thread process.
+     **********************************/
+    void stopThread();
 
 };
 
